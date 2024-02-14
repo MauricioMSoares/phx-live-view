@@ -5,26 +5,6 @@ defmodule PhxLiveViewWeb.PageLive do
     {:ok, assign(socket, number: 0, form: to_form(%{default_number: 0}))}
   end
 
-  def render(assigns) do
-    ~H"""
-    <strong>Counter: </strong>
-    <%= @number %>
-    <br />
-    <.button phx-click="add">Add</.button>
-    <.button phx-click="subtract">Subtract</.button>
-    <br />
-    <.simple_form for={@form} phx-submit="add_number">
-      <.input type="number" field={@form[:custom_number]} value={@form.params.default_number} />
-      <.button>Add Custom Number</.button>
-    </.simple_form>
-
-    <br />
-    <.example_paragraph />
-    <br />
-    <.button phx-click="navigate" class="mt-4">Forms Page</.button>
-    """
-  end
-
   def example_paragraph(assigns) do
     ~H"""
     Click the buttons to change the number

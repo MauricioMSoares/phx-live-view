@@ -1,0 +1,15 @@
+<strong>Counter: </strong>
+<%= @number %>
+<br />
+<.button phx-click="add">Add</.button>
+<.button phx-click="subtract">Subtract</.button>
+<br />
+<.simple_form for={@form} phx-submit="add_number">
+  <.input type="number" field={@form[:custom_number]} value={@form.params.default_number} />
+  <.button>Add Custom Number</.button>
+</.simple_form>
+
+<br />
+<.example_paragraph />
+<br />
+<.button phx-click="navigate" class="mt-4">Forms Page</.button>

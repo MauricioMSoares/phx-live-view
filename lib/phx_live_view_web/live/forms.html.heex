@@ -1,0 +1,9 @@
+<strong>What's your name?</strong>
+<.simple_form for={@form} phx-submit="add_name">
+  <.input field={@form[:name]} />
+  <.button>Submit</.button>
+</.simple_form>
+<%= if @name != nil do %>
+  <p class="mt-4">Welcome, <%= @name %>!</p>
+<% end %>
+<.button phx-click="navigate" class="mt-4">Home Page</.button>
