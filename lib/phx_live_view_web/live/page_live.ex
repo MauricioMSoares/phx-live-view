@@ -15,6 +15,8 @@ defmodule PhxLiveViewWeb.PageLive do
 
     <br />
     <.example_paragraph />
+    <br />
+    <.button phx-click="navigate" class="mt-4">Forms Page</.button>
     """
   end
 
@@ -30,5 +32,9 @@ defmodule PhxLiveViewWeb.PageLive do
 
   def handle_event("subtract", _params, socket) do
     {:noreply, assign(socket, number: socket.assigns.number - 1)}
+  end
+
+  def handle_event("navigate", _params, socket) do
+    {:noreply, redirect(socket, to: "/forms")}
   end
 end
