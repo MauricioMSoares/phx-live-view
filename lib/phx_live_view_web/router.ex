@@ -19,6 +19,7 @@ defmodule PhxLiveViewWeb.Router do
 
     live "/", PageLive, :home
     live "/forms", Forms
+    live "/test", TestPage
   end
 
   # Other scopes may use custom stacks.
